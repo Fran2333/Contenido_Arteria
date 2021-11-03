@@ -15,7 +15,7 @@ export const AppRouter = () => {
         <Router>
             <div>
                 <Switch>
-                    <Route exact path="/" component={ LoginScreen } />
+                    <Route exact path="/" component={ Sidebar } />
                     <Redirect to="/" />   
                 </Switch>
             </div>

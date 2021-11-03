@@ -1,0 +1,36 @@
+#arrow-side{
+    cursor: pointer;
+}
+
+#left-sidebar{
+    background-color: #ffffff !important;
+}
+
+#proyects-ul{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-out;
+}
+
+.navbar-fixed-top{
+    background-color: #ffff00 !important;
+}
+
+.navbar-brand{
+    text-align: center;
+}
+
+.navbar-brand a{
+    width: 90px;
+    height: 90px;
+}
+
+.logo{
+    width: 75% !important;
+    height: 100%;
+}
+
+span{
+    color: #141414 !important;
+    font-size: 14px;
+}
