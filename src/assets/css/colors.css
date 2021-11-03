@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+/*font*/
+.text-monospace2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+.auth_detail2 h2{
+    margin-top: 30px;
+    margin-bottom: 70px;
+    font-size: 50px;
+    font-weight:bolder;
+    color: #fff;
+}
+
+.sub-text{
+    margin-top: 20px;
+    font-weight:600;
+}
+
+.navbar-fixed-top .navbar-btn{
+    border-right: 1px solid #000000;
+}
+
+.circle-post{
+    height: 50px;
+    width: 50px;
+    margin: 2em 0em 0em 1em;
+    border-radius: 50% ;
+    border:1px solid #000000;
+}
+
+.postUser{
+    width: 100%;
+    margin:0em 0em 0em 0em;
+    display: flex;
+    justify-content:flex-start;
+}
+
+.profile{
+    margin: 2.2em 0em 0em 1em;
+}
+
+.datepost{
+    color:#444444;
+}
+
+.body2{
+    padding: 5px 20px 20px 20px;
+}
+
+.contact-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*Page login and register*/
+
+.auth-main::after{
+    background-color:#000000;
+}
+
+.auth-main::before{
+    background-color:#ffff00;
+}
+
+.btn-color{
+    background-color: #000000;
+    color:#ffffff;
+}
+
+.btn-color:hover{
+    background-color: #ffff00;
+    color:#000000;
+}
+
+
+/* navbar and sidebar*/
+.navbar-fixed-top{
+    background-color: #ffff00;
+}
+
+#left-sidebar{
+ background-color: #ffffff;
+}
+
+strong,span{
+    color:#000000;
+}
+
+.navbar-brand{
+    color:#000000;
+}
+
+.sidebar-nav .metismenu>li.active>a{
+    background-color:#000000;
+    color:#ffffff; 
+}
+
+.sidebar-nav .metismenu>li.active>a span{
+    color:#fff;
+}
+
+.fa-arrow-left{
+    color:#000000;
+}
+
+.btn-create{
+    background-color: #000000;
+    color:#ffffff;
+}
+
+.btn-create:hover{
+    background-color: #ffff00;
+    color:#000000;
+}
+
+.icon-home{
+    color:#000000;
+}
+
+.btn-contactsucces{
+    background-color: #ffff00;
+}
+
+.btn-add{
+    background:#ffff00; border-color:#ffff00; color:#000000;
+}
