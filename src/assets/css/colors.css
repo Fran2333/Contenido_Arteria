@@ -7,7 +7,6 @@
 
 .auth_detail2 h2{
     margin-top: 30px;
-    margin-bottom: 70px;
     font-size: 50px;
     font-weight:bolder;
     color: #fff;
@@ -128,3 +127,4 @@ strong,span{
 .btn-add{
     background:#ffff00; border-color:#ffff00; color:#000000;
 }
+
