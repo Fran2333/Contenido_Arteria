@@ -15,7 +15,7 @@ export const AppRouter = () => {
         <Router>
             <div>
                 <Switch>
-                    <Route exact path="/" component={ Sidebar } />
+                    <Route exact path="/" component={ Calendar } />
                     <Redirect to="/" />   
                 </Switch>
             </div>
