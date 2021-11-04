@@ -1,0 +1,96 @@
+
+body{
+    overflow-x: hidden;
+}
+
+.row-head{
+    padding: 2px 25px !important;
+    align-items: center !important;
+}
+
+.h2-title{
+    font-size: 18px !important;
+    color: #7e7e7e !important;
+    font-weight: 500;
+}
+
+.breadcrumb{
+    background: none !important;
+    margin-bottom: 0% !important;
+}
+
+.flex-right{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.btn-new{
+    background-color: #141414;
+    color: #c0c0c0 !important;
+    padding: 3px 8px !important;
+    border-radius: 5px !important;
+
+    transition: all 0.2s;
+}
+
+.btn-new:hover{
+    color: #141414 !important;
+}
+
+/*****************/
+
+.container-fluid{
+    background-color: #e9f0f0 !important;
+    padding: 20px;
+}
+
+/*****************/
+
+.fc {
+    padding: 30px !important;
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 0% !important;
+    padding-bottom: 1.5em;
+}
+
+/******************/
+
+.card{
+    padding: 15px;
+}
+
+.progress{
+    background-color: #3478dd !important;
+    height: 4px !important;
+    margin: 25px 0px;
+}
+
+.social{
+    border-top: 0.3px #e2e2e2 solid;
+    border-bottom: 0.3px #e2e2e2 solid;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+}
+
+.s-tiktok, .s-facebook, .s-instagram{
+    padding: 4px 8px;
+    margin-left: 15px;
+}
+
+.s-tiktok{
+    border: 0.3px #aaaaaa solid;
+    color: #aaaaaa !important;
+}
+
+.s-facebook{
+    border: 0.3px #3479d3 solid;
+    color: #3479d3 !important;
+}
+
+.s-instagram{
+    border: 0.3px #f21e68 solid;
+    color: #f21e68 !important;
+}
