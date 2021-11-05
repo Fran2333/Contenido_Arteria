@@ -1,27 +1,17 @@
 import React from 'react'
 import FullCalendar from '@fullcalendar/react'; 
 import dayGridPlugin from '@fullcalendar/daygrid';
+import {Modl} from './modal/modal';
+
 import './calendar.css';
 
 export const Calendar = () => {
     return (
         <div>      
             <div id="main-content">
-                <div className="block-header">
-                    <div className="row clearfix row-head">
-                        <div className="col-md-6 col-sm-12">
-                            <h2 className="h2-title">Calendario</h2>
-                        </div>            
-                        <div className="col-md-6 col-sm-12 text-right flex-right">
-                            <ul className="breadcrumb">
-                                <li className="breadcrumb-item"><a href="/calendar"><i className="icon-home"></i></a></li>
-                                <li className="breadcrumb-item active">Calendario</li>
-                            </ul>
-                            
-                            <a  className="btn btn-sm btn-create btn-create2 btn-new" title="" data-toggle="modal" data-target="#addevent">Crear publicación</a>
-                        </div>
-                    </div>
-                </div>
+                <Modl/>
+
+                <div id="modal-content"></div>
 
                 <div className="container-fluid">
 
@@ -60,36 +50,6 @@ export const Calendar = () => {
                     </div>
                 </div>
                 
-            </div>
-            <div className="modal fade" id="addevent" role="dialog">
-                <div className="modal-dialog" role="document">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h4 className="title" id="defaultModalLabel">Add Event</h4>
-                        </div>
-                        <div className="modal-body">
-                            <div className="form-group">
-                                <div className="form-line">
-                                    <input type="number" className="form-control" placeholder="Event Date"/>
-                                </div>
-                            </div>
-                            <div className="form-group">
-                                <div className="form-line">
-                                    <input type="text" className="form-control" placeholder="Event Title"/>
-                                </div>
-                            </div>
-                            <div className="form-group">
-                                <div className="form-line">
-                                    <textarea className="form-control no-resize" placeholder="Event Description..."></textarea>
-                                </div>
-                            </div>       
-                        </div>x
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-primary">Add</button>
-                            <button type="button" className="btn btn-simple" data-dismiss="modal">CLOSE</button>
-                        </div>
-                    </div>
-                </div>
             </div>
     </div>
     )

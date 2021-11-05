@@ -3,44 +3,12 @@ body{
     overflow-x: hidden;
 }
 
-.row-head{
-    padding: 2px 25px !important;
-    align-items: center !important;
-}
-
-.h2-title{
-    font-size: 18px !important;
-    color: #7e7e7e !important;
-    font-weight: 500;
-}
-
-.breadcrumb{
-    background: none !important;
-    margin-bottom: 0% !important;
-}
-
-.flex-right{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
-
-.btn-new{
-    background-color: #141414;
-    color: #c0c0c0 !important;
-    padding: 3px 8px !important;
-    border-radius: 5px !important;
-
-    transition: all 0.2s;
-}
-
-.btn-new:hover{
-    color: #141414 !important;
-}
 
 /*****************/
 
 .container-fluid{
+    position: relative;
+    z-index: 0;
     background-color: #e9f0f0 !important;
     padding: 20px;
 }
