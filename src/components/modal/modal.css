@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap');
+
+
 .row-head{
     padding: 2px 25px !important;
     align-items: center !important;
@@ -32,3 +35,148 @@
 .btn-new:hover{
     color: #141414 !important;
 }
+
+
+/******/
+
+.Modal-P{
+    border: none !important;
+}
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+    transform: translateX(0px);
+}
+  
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.modal-content{
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.modal-header{
+    padding: 10px 0px;
+    border: none;
+}
+
+.modal-body{
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.btnCancel{
+    width: 22px;
+    height: 22px;
+    margin-left: 95%;
+    border: none;
+    border-radius: 50%;
+    background-image: url("../../assets/images/close-gray.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all 0.2s;
+}
+
+.btnCancel:hover{
+    background-image: url("../../assets/images/boton-de-cierre.png");
+}
+
+.form-select{
+    width: 200px;
+    margin-left: 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    padding: 3px 10px;
+    color: #3f3f3f;
+    margin-bottom: 25px;
+}
+
+.form-select option{
+    color: #3f3f3f;
+}
+
+.form-select option:disabled{
+    color: #666666;
+}
+
+.date-content{
+    margin-bottom: 25px;
+}
+
+.date-input{
+    margin-left: 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    padding: 3px 15px;
+    border: 0.2px #7e7e7e solid;
+    color: #666666;
+}
+
+.form-title{
+    font-weight: 600;
+    font-size: 15px;
+    color: #545454;
+    margin-left: 5px;
+}
+
+.area-description{
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 12.5px;
+    color: #666666;
+}
+
+.description-content, .galery-content{
+    margin-bottom: 30px;
+}
+
+.galery-img{
+    width: 100%;
+    height: 60px;
+    border: 0.1px #7e7e7e solid;
+}
+
+.btn-content{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-content button{
+    margin-top: 30px;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 20px;
+    transition: all 0.2s;
+}
+
+.btnAccept{
+    background-color: #ffff00;
+    color: #141414;
+    margin-left: 15px;
+    font-weight: 600;
+}
+
+.btnCan{
+    background-color: #141414;
+    color: #ffffff;
+    margin-left: 15px;
+    font-weight: 600;
+}
+
+.btn-content button:hover{
+    opacity: 0.65;
+}
+

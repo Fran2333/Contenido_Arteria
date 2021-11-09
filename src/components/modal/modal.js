@@ -1,6 +1,5 @@
 import React from 'react';
 import Modal from 'react-modal';
-import ReactDOM from 'react-dom';
 import './modal.css';
 
  const style = {
@@ -10,37 +9,39 @@ import './modal.css';
       left: 0,
       right: 0,
       bottom: 0,
-      backgroundColor: 'rgba(255, 255, 255, 0.75)'
+      backgroundColor: 'rgba(5, 5, 5, 0.529)'
     },
     content: {
+      width: '550px',
+      height: "610px",
       position: 'absolute',
-      top: '40px',
-      left: '40px',
-      right: '40px',
-      bottom: '40px',
+      top: '10px',
+      left: '375px',
       border: '1px solid #ccc',
-      background: '#fff',
       overflow: 'auto',
       WebkitOverflowScrolling: 'touch',
       borderRadius: '4px',
       outline: 'none',
-      padding: '20px'
     }
  }
 
 
 export const Modl = () => {
 
-    let subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
     function openModal (){
         setIsOpen(true);
     }
 
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        subtitle.style.color = '#f00';
+    function afterOpenModal(){
+        const fechaActual = new Date();
+        const dia = fechaActual.getDay();
+        const mes = fechaActual.getMonth() + 1;
+        const anio = fechaActual.getFullYear();
+
+        const dateInp = document.getElementById("date");
+        dateInp.value = dia+"/"+mes+"/"+anio;
     }
 
     function closeModal() {
@@ -68,25 +69,48 @@ export const Modl = () => {
 
             <Modal
                 isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
+                onAfterOpen={afterOpenModal}
+                closeTimeoutMS={500}
                 style={style}
-                contentLabel="Example Modal"
+                contentLabel="Modal-Publicacion"
+                className="Modal-P visible"
             >
             <div className="modal-content">
-                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-                <button onClick={closeModal}>close</button>
-                <div>I am a modal</div>
-                <form>
-                <input />
-                <button>tab navigation</button>
-                <button>stays</button>
-                <button>inside</button>
-                <button>the modal</button>
-                </form>
+                <div className="modal-header">
+                    <button className="btnCancel" onClick={closeModal}></button>
+                </div>
+                <div className="modal-body">
+                    <form>
+                        <div className="select-content">
+                            <label className="form-title">Seleccionar empresa:</label>
+                            <select className="form-select">
+                                <option value=""disabled>Seleccione una opción</option>
+                            </select>
+                        </div>
+                        <div className="date-content">
+                            <label className="form-title">Seleccionar fecha del post:</label>
+                            <input className="date-input" id="date" type="datetime-local"/>
+                        </div>
+                        <div className="description-content">
+                            <label className="form-title">Agregar descripción:</label>
+                            <textarea className="area-description" name="textarea" rows="6" placeholder="Agrega la descripción del post"></textarea>
+                        </div>
+                        <div className="galery-content">
+                            <label className="form-title">Agregar imágen(es):</label>
+                            <div className="galery-img"></div>
+                        </div>
+                        <div className="btn-content">
+                            <button className="btnCan" onClick={closeModal}>Cancelar</button>
+                            <button type="submit" className="btnAccept">Aceptar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
             </Modal>
         </div>
+
+        
     );
 }
 

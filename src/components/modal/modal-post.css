@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap');
+
+.Modal-P{
+    border: none !important;
+}
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+    transform: translateX(0px);
+}
+  
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.modal-content{
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.modal-header{
+    padding: 10px 0px;
+    border: none;
+}
+
+.modal-body{
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px 45px;
+}
+
+.btnCancel{
+    width: 22px;
+    height: 22px;
+    margin-left: 95%;
+    border: none;
+    border-radius: 50%;
+    background-image: url("../../assets/images/close-gray.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all 0.2s;
+}
+
+.btnCancel:hover{
+    background-image: url("../../assets/images/boton-de-cierre.png");
+}
+
+/*****************************************/
+
+.Modal-P::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+    
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+.Modal-P::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.Modal-P::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+.Modal-P::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+.info-brand{
+    display: flex;
+    align-items: center;
+}
+
+.logo-brand{
+    width: 50px;
+    height: 50px;
+    border: 0.1px #666666 solid;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.user-brand{
+    margin: 0%;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.date-brand-post{
+    font-size: 13px;
+    font-weight: 400;
+    color: #5c5c5c !important;
+}
+
+.description-content{
+    margin-top: 25px;
+    font-size: 14px;
+    color: #5c5c5c;
+    font-weight: 400;
+}
+
+.img-brand{
+    width: 100%;
+    height: 300px;
+    border: 0.5px #5c5c5c solid;
+}
+
+.formulario-verificacion{
+    margin-top: 30px;
+}
+
+.area-content{
+    width: 100%;
+}
+
+.area-description{
+    padding: 20px;
+}
+
+.btn-content button{
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.btnCorr{
+    background-color: #ffff00;
+    color: #141414;
+    margin-left: 15px;
+    font-weight: 600;
+}
+
+.btnAccept{
+    background-color: #1d2eb1;
+    color: #ffffff;
+}

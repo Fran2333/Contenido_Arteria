@@ -2,6 +2,7 @@ import React from 'react'
 import FullCalendar from '@fullcalendar/react'; 
 import dayGridPlugin from '@fullcalendar/daygrid';
 import {Modl} from './modal/modal';
+import {ModalPost} from './modal/modal-post';
 
 import './calendar.css';
 
@@ -10,7 +11,7 @@ export const Calendar = () => {
         <div>      
             <div id="main-content">
                 <Modl/>
-
+                <ModalPost />
                 <div id="modal-content"></div>
 
                 <div className="container-fluid">
