@@ -2,6 +2,10 @@ import React from 'react';
 import Modal from 'react-modal';
 import './modal.css';
 
+//import {FilePonds} from '../filepond/fpond';
+
+import {DropFileInput} from '../dragdrop/drag';
+
  const style = {
     overlay: {
       position: 'fixed',
@@ -46,6 +50,10 @@ export const Modl = () => {
 
     function closeModal() {
         setIsOpen(false);
+    }
+
+    const onFileChange = (files) => {
+        console.log(files);
     }
 
     return (
@@ -97,8 +105,9 @@ export const Modl = () => {
                             <textarea className="area-description" name="textarea" rows="6" placeholder="Agrega la descripción del post"></textarea>
                         </div>
                         <div className="galery-content">
-                            <label className="form-title">Agregar imágen(es):</label>
-                            <div className="galery-img"></div>
+                            <DropFileInput 
+                                onFileChange={(files) => onFileChange(files)}
+                            />
                         </div>
                         <div className="btn-content">
                             <button className="btnCan" onClick={closeModal}>Cancelar</button>
