@@ -93,6 +93,14 @@
     background-image: url("../../assets/images/boton-de-cierre.png");
 }
 
+.post-title{
+    margin-bottom: 40px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #3f3f3f;
+    margin-left: 10px;
+}
+
 .form-select{
     width: 200px;
     margin-left: 20px;
@@ -109,6 +117,24 @@
 
 .form-select option:disabled{
     color: #666666;
+}
+
+.radio-content{
+    margin-bottom: 20px;
+}
+
+.radio-flex{
+    display: flex;
+    align-items: center;
+}
+
+.form-check{
+    margin-left: 20px;
+}
+
+.form-check-input{
+    width: 15px;
+    height: 15px;
 }
 
 .date-content{

@@ -44,8 +44,11 @@ export const Modl = () => {
         const mes = fechaActual.getMonth() + 1;
         const anio = fechaActual.getFullYear();
 
-        const dateInp = document.getElementById("date");
-        dateInp.value = dia+"/"+mes+"/"+anio;
+        const dateInicio = document.getElementById("date-inicio");
+        dateInicio.value = dia+"/"+mes+"/"+anio;
+
+        const dateFin = document.getElementById("date-fin");
+        dateFin.value = (dia+1)+"/"+mes+"/"+anio;
     }
 
     function closeModal() {
@@ -89,20 +92,55 @@ export const Modl = () => {
                     <button className="btnCancel" onClick={closeModal}></button>
                 </div>
                 <div className="modal-body">
+                    <h2 className="post-title">Nueva publicación</h2>
                     <form>
                         <div className="select-content">
-                            <label className="form-title">Seleccionar empresa:</label>
-                            <select className="form-select">
+                            <label className="form-title">Seleccionar marca:</label>
+                            <select className="form-select" name="brand" id="brandSelect">
                                 <option value=""disabled>Seleccione una opción</option>
                             </select>
                         </div>
+                        <div className="radio-content">
+                            <label className="form-title">Publicación pautada:</label>
+                            <div className="radio-flex">
+                                <div class="form-check">
+                                    <input className="form-check-input" type="radio" name="pauta" value="true"/>
+                                    <label className="social-label">Si</label>
+                                </div>
+                                <div class="form-check">
+                                    <input className="form-check-input" type="radio" name="pauta" value="false"/>
+                                    <label className="social-label">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="radio-content">
+                            <label className="form-title">Seleccionar la red social:</label>
+                            <div className="radio-flex">
+                                <div class="form-check">
+                                    <input className="form-check-input" type="radio" name="social" value="facebook"/>
+                                    <label className="social-label">Facebook</label>
+                                </div>
+                                <div class="form-check">
+                                    <input className="form-check-input" type="radio" name="social" value="instagram"/>
+                                    <label className="social-label">Instagram</label>
+                                </div>
+                                <div class="form-check">
+                                    <input className="form-check-input" type="radio" name="social" value="tiktok"/>
+                                    <label className="social-label">TikTok</label>
+                                </div>
+                            </div>
+                        </div>
                         <div className="date-content">
-                            <label className="form-title">Seleccionar fecha del post:</label>
-                            <input className="date-input" id="date" type="datetime-local"/>
+                            <label className="form-title">Seleccionar fecha de inicio:</label>
+                            <input className="date-input" id="date-inicio" type="datetime-local" name="fechaInicio"/>
+                        </div>
+                        <div className="date-content">
+                            <label className="form-title">Seleccionar fecha de fin:</label>
+                            <input className="date-input" id="date-fin" type="datetime-local" name="fechaFin"/>
                         </div>
                         <div className="description-content">
                             <label className="form-title">Agregar descripción:</label>
-                            <textarea className="area-description" name="textarea" rows="6" placeholder="Agrega la descripción del post"></textarea>
+                            <textarea className="area-description" name="descripcionArea" rows="6" placeholder="Agrega la descripción del post"></textarea>
                         </div>
                         <div className="galery-content">
                             <DropFileInput 

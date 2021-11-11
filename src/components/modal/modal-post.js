@@ -1,6 +1,9 @@
 import React from 'react';
 import Modal from 'react-modal';
-import './modal-post.css';
+
+import "./modal-post.css"
+import {Owldemo1} from '../carousel/carousel'
+
 
  const style = {
     overlay: {
@@ -12,11 +15,11 @@ import './modal-post.css';
       backgroundColor: 'rgba(5, 5, 5, 0.529)'
     },
     content: {
-      width: '500px',
+      width: '600px',
       height: "610px",
       position: 'absolute',
       top: '10px',
-      left: '400px',
+      left: '375px',
       border: '1px solid #ccc',
       overflow: 'auto',
       WebkitOverflowScrolling: 'touch',
@@ -69,15 +72,15 @@ export const ModalPost = () => {
                     <p className="description-content">
                         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
                     </p>
-                    <div className="img-brand"></div>
+                    <Owldemo1 />
                     <form className="formulario-verificacion">
                         <div className="area-content">
                             <textarea className="area-description" name="textarea" rows="4" placeholder="Agrega comentario del post"></textarea>
                         </div>
                         <div className="btn-content">
                             <button className="btnCan" onClick={closeModal}>Cancelar</button>
-                            <button className="btnCorr">Enviar correciones</button>
-                            <button type="submit" className="btnAccept">Aceptar</button>
+                            <button className="btnCorr" name="corregir" value="true">Enviar correciones</button>
+                            <button type="submit" className="btnAccept" name="enviar" value="true">Aceptar</button>
                         </div>
                     </form>
                 </div>

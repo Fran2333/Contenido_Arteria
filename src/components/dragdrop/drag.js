@@ -49,7 +49,7 @@ export const DropFileInput = props => {
                         Arrastra y suelta tus imágenes aquí
                     </p>
                 </div>
-                <input type="file" value="" onChange={onFileDrop}/>
+                <input type="file" value="" onChange={onFileDrop} name="files[]"/>
             </div>
             {
                 fileList.length > 0 ? (
