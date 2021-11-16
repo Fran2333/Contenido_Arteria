@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
-span{
+span, .typed span{
     color: #ffffff !important;
     font-weight: bolder;
     font-size: 50px;
@@ -11,6 +11,6 @@ span{
     margin-right: 10px !important;
 }
 
-.logo{
-    width: 200px;
+#logo{
+    width: 200px !important;
 }

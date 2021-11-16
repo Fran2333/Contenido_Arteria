@@ -19,7 +19,7 @@ import {Owldemo1} from '../carousel/carousel'
       height: "610px",
       position: 'absolute',
       top: '10px',
-      left: '375px',
+      left: '365px',
       border: '1px solid #ccc',
       overflow: 'auto',
       WebkitOverflowScrolling: 'touch',
