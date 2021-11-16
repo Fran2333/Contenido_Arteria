@@ -18,6 +18,12 @@ const textLines = [
 ];
 
 export const LoginScreen = () => {
+
+    const initialForm = {
+        name: '',
+        password: ''
+    }
+
     return (
         <div id="wrapper" className="auth-main">
             <div className="container">
