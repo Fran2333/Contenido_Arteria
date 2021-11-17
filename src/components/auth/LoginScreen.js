@@ -1,7 +1,13 @@
 import React from 'react';
 import Typed from 'react-typed';
+import {useDispatch} from 'react-redux';
+import {useForm} from '../../hooks/useForm'
+import { startLogin } from '../../actions/auth';
 import './LoginScreen.css';
 import logo from '../../assets/images/large_blanco2.png'
+
+
+
 
 const textLines = [
     `Marca`,
@@ -19,9 +25,19 @@ const textLines = [
 
 export const LoginScreen = () => {
 
-    const initialForm = {
-        name: '',
-        password: ''
+    const dispatch = useDispatch();
+
+    const [ formLoginValues, handleLoginInputChange ] = useForm({
+            lEmail: 'francisco1@gmail.com',
+            lPassword: '12345678'
+    });
+
+    const {lEmail, lPassword} = formLoginValues;
+
+    const handleLogin = (e) =>{
+        e.preventDefault();
+
+        dispatch(startLogin (lEmail, lPassword))
     }
 
     return (
@@ -53,12 +69,12 @@ export const LoginScreen = () => {
                                 <p className="lead">Login to your account</p>
                             </div>
                             <div className="body">
-                                <form className="form-auth-small" action="/" method="POST   ">
+                                <form className="form-auth-small" action="/" method="POST" onSubmit={handleLogin}>
                                 <div className="form-group">
-                                    <input type="text" name="username" placeholder="Username" className="form-control"/>
+                                    <input type="text" name="lEmail" value = {lEmail} onChange={handleLoginInputChange} placeholder="Username" className="form-control"/>
                                 </div>
                                 <div className="form-group">
-                                    <input  type="password" name="password" placeholder="Password" className="form-control"/>
+                                    <input  type="password" name="lPassword" value= {lPassword} onChange={handleLoginInputChange} placeholder="Password" className="form-control"/>
                                 </div>
                                 <button className="btn btn-color btn-lg btn-block">LOGIN</button>
                                 </form>

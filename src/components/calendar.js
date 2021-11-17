@@ -1,17 +1,17 @@
 import React from 'react'
+import {useSelector} from 'react-redux'
 import FullCalendar from '@fullcalendar/react'; 
 import dayGridPlugin from '@fullcalendar/daygrid';
 import {Modl} from './modal/modal';
-import {ModalPost} from './modal/modal-post';
-
 import './calendar.css';
 
 export const Calendar = () => {
+
+    const {name} = useSelector(state => state.auth)
     return (
         <div>      
             <div id="main-content">
                 <Modl/>
-                <ModalPost />
                 <div id="modal-content"></div>
 
                 <div className="container-fluid">
@@ -33,7 +33,7 @@ export const Calendar = () => {
                                         <div className="text-center">
                                             <img src="/" className="rounded-circle m-b-15" alt=""/>
                                             <div>
-                                                <h4 className="m-b-0"><strong>Nombre Usuario</strong></h4>
+                                                <h4 className="m-b-0"><strong> {name}</strong></h4>
                                             </div>
                                             <div className="progress progress-xs m-b-25 m-t-25">
                                                 <div className="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">

@@ -1,6 +1,8 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import "./sidebar.css"
 import logo from "../../assets/images/large_negro2.png";
+import { startLogout } from '../../actions/auth';
 
 export const Sidebar = () => {
     
@@ -33,6 +35,13 @@ export const Sidebar = () => {
         }
     }
 
+        const dispatch = useDispatch();
+        const {name} = useSelector(state => state.auth)
+
+        const handleLogout = () => {
+            dispatch(startLogout())
+        }
+
     return (
     <div>
         <nav className="navbar navbar-fixed-top" id="nav-top">
@@ -47,7 +56,7 @@ export const Sidebar = () => {
                 <div className="navbar-right">                 
                     <div id="navbar-menu">
                         <ul className="nav navbar-nav">
-                            <li><a  href="/" className="icon-menu"><i className="icon-power"></i></a></li>
+                            <li><a  href="/" className="icon-menu" onClick={handleLogout}><i className="icon-power"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -66,7 +75,7 @@ export const Sidebar = () => {
                     </div>
                     <div className="dropdown">
                         <span>Bienvenido,</span>
-                        <a href="/" className=" user-name"><strong>hola</strong></a>
+                        <a href="/" className=" user-name"><strong>{name}</strong></a>
                     </div>
                 </div>  
                 <nav id="left-sidebar-nav" className="sidebar-nav">
