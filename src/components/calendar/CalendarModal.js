@@ -105,7 +105,7 @@ export const CalendarModal = () => {
     {/* if ( activeEvent ) {
             dispatch( eventUpdated( formValues ) )
         } else {
-            dispatch( eventStartAddNew( formValues ) );
+            dispatch( eventStartAddNew( formValues ) ); jajaja
         }*/}
 
 
