@@ -48,13 +48,13 @@ export const Sidebar = () => {
             <div className="container-fluid">
                 <div className="navbar-left">
                     <div className="navbar-btn">
-                        <a href="/calendar"><img src="" alt="HexaBit Logo" className="img-fluid logo"/></a>
-                        <button type="button" className="btn-toggle-offcanvas"><i className="lnr lnr-menu fa fa-bars"></i></button>
+                        <a href="#"><img src="" alt="Arteria Estudio" className="img-fluid logo"/></a>
+                        <button type="button" onClick={movimientoSideBar} className="btn-toggle-offcanvas"><i className="lnr lnr-menu fa fa-bars"></i></button>
                     </div>
-                    <i className="fa fa-arrow-left" id="arrow-side" onClick={movimientoSideBar}></i>
+                    {/*<i className="fa fa-arrow-left" id="arrow-side" onClick={movimientoSideBar}></i>*/}
                 </div>          
                 <div className="navbar-right">                 
-                    <div id="navbar-menu">
+                  <div id="navbar-menu">
                         <ul className="nav navbar-nav">
                             <li><a  href="/" className="icon-menu" onClick={handleLogout}><i className="icon-power"></i></a></li>
                         </ul>

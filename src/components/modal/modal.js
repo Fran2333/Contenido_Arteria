@@ -1,5 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { useDispatch } from 'react-redux';
+import { uiOpenModal } from '../../actions/ui';
 import './modal.css';
 
 //import {FilePonds} from '../filepond/fpond';
@@ -34,8 +36,9 @@ export const Modl = () => {
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
-    function openModal (){
-        setIsOpen(true);
+    const dispatch = useDispatch();
+    const handleClickNew = () => {
+        dispatch( uiOpenModal() );
     }
 
     function afterOpenModal(){
@@ -72,7 +75,7 @@ export const Modl = () => {
                             <li className="breadcrumb-item active">Calendario</li>
                         </ul>
                             
-                        <a  className="btn btn-sm btn-create btn-create2 btn-new" onClick={openModal}>Crear publicación</a>
+                        <a  className="btn btn-sm btn-create btn-create2 btn-new"  onClick={ handleClickNew }>Crear publicación</a>
                     </div>
                 </div>
             </div>

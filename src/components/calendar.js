@@ -1,9 +1,10 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
-import FullCalendar from '@fullcalendar/react'; 
-import dayGridPlugin from '@fullcalendar/daygrid';
+import {CalendarScreen} from '../components/calendar/CalendarScreen'
 import {Modl} from './modal/modal';
+
 import './calendar.css';
+
 
 export const Calendar = () => {
 
@@ -14,16 +15,13 @@ export const Calendar = () => {
                 <Modl/>
                 <div id="modal-content"></div>
 
-                <div className="container-fluid">
+                <div className="container-fluid1">
 
                         <div className="row clearfix">
                             <div className="col-lg-8">
                                 <div className="card">
                                     <div className="body">
-                                    <FullCalendar
-                                        plugins={[ dayGridPlugin ]}
-                                        initialView="dayGridMonth"
-                                    />
+                                        <CalendarScreen/>
                                     </div>
                                 </div>
                             </div>

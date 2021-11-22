@@ -12,6 +12,8 @@ import {Calendario} from '../pages/calendario'
 import { startChecking } from '../actions/auth';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { CalendarScreen } from '../components/calendar/CalendarScreen';
+
 
 export const AppRouter = () => {
 
