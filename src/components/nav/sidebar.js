@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import "./sidebar.css"
 import logo from "../../assets/images/large_negro2.png";
+import logo_small from "../../assets/images/small_negro.png";
 import { startLogout } from '../../actions/auth';
 
 export const Sidebar = () => {
@@ -48,7 +49,7 @@ export const Sidebar = () => {
             <div className="container-fluid">
                 <div className="navbar-left">
                     <div className="navbar-btn">
-                        <a href="#"><img src="" alt="Arteria Estudio" className="img-fluid logo"/></a>
+                        <a href="#"><img src={logo_small} alt="Arteria Estudio" className="img-fluid logo"/></a>
                         <button type="button" onClick={movimientoSideBar} className="btn-toggle-offcanvas"><i className="lnr lnr-menu fa fa-bars"></i></button>
                     </div>
                     {/*<i className="fa fa-arrow-left" id="arrow-side" onClick={movimientoSideBar}></i>*/}
@@ -66,7 +67,9 @@ export const Sidebar = () => {
         <div id="left-sidebar" className="sidebar">
             <div className="navbar-brand">
                 <a href="/"><img src={logo} alt="Arteria-Logo" className="img-fluid logo"/></a>
-                <button type="button" className="btn-toggle-offcanvas btn btn-sm btn-default float-right"><i className="lnr lnr-menu fa fa-chevron-circle-left"></i></button>
+                <button type="button" className="btn-toggle-offcanvas btn btn-sm btn-default float-right">
+                    <i className="lnr lnr-menu fa fa-chevron-circle-left" id="hamburguer-btn"></i>
+                </button>
             </div>
             <div className="sidebar-scroll">
                 <div className="user-account">

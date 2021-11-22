@@ -34,3 +34,14 @@ span{
     color: #141414 !important;
     font-size: 14px;
 }
+
+@media screen and (max-width: 650px) {
+    .fa-bars:before{
+        color: #141414;
+    }
+
+    .logo{
+        width: 25px !important;
+        margin-right: 15px;
+    }
+}
