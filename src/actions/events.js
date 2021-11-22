@@ -1,7 +1,7 @@
 import { classBody } from "@babel/types";
 import { types } from "../types/types";
 
-export const eventStartAddNew = (event) =>{
+{/*export const eventStartAddNew = (event) =>{
 
     try {
         return async(dispatch)=>{
@@ -15,7 +15,7 @@ export const eventStartAddNew = (event) =>{
     } catch (error) {
         
     }
-}
+} */}
 
 const eventAddNew = (event) => ({
     type: types.eventAddNew,

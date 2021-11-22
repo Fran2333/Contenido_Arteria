@@ -7,7 +7,7 @@ import DateTimePicker from 'react-datetime-picker';
 import Swal from 'sweetalert2';
 
 import { uiCloseModal } from '../../actions/ui';
-import { eventStartAddNew, eventClearActiveEvent, eventUpdated } from '../../actions/events';
+import {  eventClearActiveEvent, eventUpdated } from '../../actions/events';
 
 
 const customStyles = {
@@ -102,11 +102,11 @@ export const CalendarModal = () => {
             return setTitleValid(false);
         }
 
-        if ( activeEvent ) {
+    {/* if ( activeEvent ) {
             dispatch( eventUpdated( formValues ) )
         } else {
             dispatch( eventStartAddNew( formValues ) );
-        }
+        }*/}
 
 
         setTitleValid(true);
