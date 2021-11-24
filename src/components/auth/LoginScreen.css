@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
-span{
+span, .typed span{
     color: #ffffff !important;
     font-weight: bolder;
     font-size: 50px;
@@ -11,6 +11,26 @@ span{
     margin-right: 10px !important;
 }
 
-.logo{
+.logo-log{
     width: 200px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .logo-log{
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .auth-main::before{
+        background-color: #141414 !important;
+    }
+
+    .auth_detail2 h2, .typed span{
+        font-size: 40px !important;
+    }
+
+    .social-links{
+        text-align: center;
+    }
 }

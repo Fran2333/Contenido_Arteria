@@ -46,14 +46,14 @@ export const LoginScreen = () => {
                 <div className="row clearfix">
                     <div className="col-12">
                         <nav className="navbar navbar-expand-lg">
-                            <img src={logo} className="logo"/>
+                            <img src={logo} className="logo-log"/>
                         </nav>
                     </div>
                     <div className="col-lg-8">
                         <div className="auth_detail2">
                             <h2>Potenciamos<br></br>El éxito de tu</h2>
                             <div>
-                                <Typed strings={textLines} typeSpeed={100} backSpeed={60} className="typed"/>
+                                <Typed strings={textLines} typeSpeed={100} backSpeed={60} loop className="typed"/>
                             </div>
                             <ul className="social-links list-unstyled">
                             <li><a className="btn btn-default" href="https://www.facebook.com/arteriaestudio.sv" data-toggle="tooltip" data-placement="top" title="facebook"><i className="fab fa-facebook"></i></a></li>
