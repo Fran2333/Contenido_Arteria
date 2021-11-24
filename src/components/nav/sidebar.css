@@ -35,13 +35,26 @@ span{
     font-size: 14px;
 }
 
+.hamb-btn{
+    display: none !important;
+    margin-right: 15px;
+}
+
+
 @media screen and (max-width: 650px) {
     .fa-bars:before{
         color: #141414;
     }
 
-    .logo{
+    .logo-sm{
         width: 25px !important;
-        margin-right: 15px;
+    }
+
+    .logo{
+        width: 100px;
+    }
+
+    .hamb-btn{
+        display: inline !important;
     }
 }

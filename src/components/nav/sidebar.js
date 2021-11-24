@@ -7,20 +7,21 @@ import { startLogout } from '../../actions/auth';
 
 export const Sidebar = () => {
     
-    const movimientoSideBar = () =>{
-        const sideBar = document.getElementById("left-sidebar");
-        const navTop = document.getElementById("nav-top");
+    const mostrarSideBar = () =>{
+        const sidebar = document.getElementById("left-sidebar");
+        const left = sidebar.style.left;
 
-        const width = sideBar.style.width;
 
-        if(width == "0px"){
-            sideBar.style.width = "250px";
-            navTop.style.width = "calc(100% - 250px)";
-        }
-        else{
-            sideBar.style.width = "0px";
-            navTop.style.width = "100%";
-        }
+       if(left == ("-250px")){
+            document.getElementById("left-sidebar").style.left = "0px";
+            console.log(left)
+       }
+       else{
+            document.getElementById("left-sidebar").style.left = "-250px";
+            if(left == ""){
+                document.getElementById("left-sidebar").style.left = "0px";
+            }
+       }
     }
 
     const mostrarProyectos = () =>{
@@ -49,19 +50,21 @@ export const Sidebar = () => {
             <div className="container-fluid">
                 <div className="navbar-left">
                     <div className="navbar-btn">
-                        <a href="#"><img src={logo_small} alt="Arteria Estudio" className="img-fluid logo"/></a>
-                        <button type="button" onClick={movimientoSideBar} className="btn-toggle-offcanvas"><i className="lnr lnr-menu fa fa-bars"></i></button>
+                        <a href="#"><img src={logo_small} alt="Arteria Estudio" className="img-fluid logo-sm"/></a>
                     </div>
                     {/*<i className="fa fa-arrow-left" id="arrow-side" onClick={movimientoSideBar}></i>*/}
                 </div>          
                 <div className="navbar-right">                 
                   <div id="navbar-menu">
                         <ul className="nav navbar-nav">
+                            <li className="hamb-btn" onClick={mostrarSideBar}><i className="lnr lnr-menu fa fa-bars"></i></li>
                             <li><a  href="/" className="icon-menu" onClick={handleLogout}><i className="icon-power"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
+
+            
         </nav>
     
         <div id="left-sidebar" className="sidebar">
