@@ -9,6 +9,9 @@ import Swal from 'sweetalert2';
 import { uiCloseModal } from '../../actions/ui';
 import {  eventClearActiveEvent, eventUpdated } from '../../actions/events';
 
+import {DropFileInput} from '../dragdrop/drag';
+
+import '../dragdrop/drag.css';
 
 const customStyles = {
     content : {
@@ -175,6 +178,14 @@ export const CalendarModal = () => {
                         value={ notes }
                         onChange={ handleInputChange }
                     ></textarea>
+                    <small id="emailHelp" className="form-text text-muted">Información adicional</small>
+                </div>
+
+                <div className="form-group">
+                    <label>Fotos a subir: </label>
+                    <DropFileInput 
+                        onFileChange={(files) => onFileChange(files)}
+                    />
                     <small id="emailHelp" className="form-text text-muted">Información adicional</small>
                 </div>
 
