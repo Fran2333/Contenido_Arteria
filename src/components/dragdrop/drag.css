@@ -95,3 +95,13 @@
     opacity: 1;
 }
 
+
+@media screen and (max-width: 650px) {
+    .drop-file-input{
+        width: auto;
+    }
+
+    .drop-file-input__label{
+        margin: auto;
+    }
+}

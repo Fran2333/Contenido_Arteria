@@ -13,6 +13,8 @@ import {DropFileInput} from '../dragdrop/drag';
 
 import '../dragdrop/drag.css';
 
+import './CalendarModal.css';
+
 const customStyles = {
     content : {
       top                   : '50%',
@@ -20,8 +22,10 @@ const customStyles = {
       right                 : 'auto',
       bottom                : 'auto',
       marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)'
+      transform             : 'translate(-50%, -50%)',
+      overflowY             : 'scroll'
     }
+
 };
 Modal.setAppElement('#root');
 
@@ -117,6 +121,9 @@ export const CalendarModal = () => {
         
     }
 
+    const onFileChange = (files) => {
+        console.log(files);
+    }
 
     return (
         <Modal
@@ -127,7 +134,7 @@ export const CalendarModal = () => {
           className="modal"
           overlayClassName="modal-fondo"
         >
-            <h1> { (activeEvent)? 'Editar evento': 'Nuevo evento' } </h1>
+            <h1 className="modal-title"> { (activeEvent)? 'Editar evento': 'Nuevo evento' } </h1>
             <hr />
             <form 
                 className="container"
@@ -182,11 +189,53 @@ export const CalendarModal = () => {
                 </div>
 
                 <div className="form-group">
+                    <label className="form-title">Seleccionar marca:</label>
+                            <select className="form-select" name="brand" id="brandSelect">
+                                <option value=""disabled>Seleccione una opción</option>
+                            </select>
+                    <small id="emailHelp" className="form-text text-muted">Nombre de marca</small>
+                </div>
+
+                <div className="form-group">
+                    <label className="form-title">Publicación pautada:</label>
+                    <div className="radio-flex">
+                            <div class="form-check">
+                                    <input className="form-check-input" type="radio" name="pauta" value="true" id="si-p"/>
+                                    <label className="social-label" for="si-p">Si</label>
+                            </div>
+                            <div class="form-check">
+                                    <input className="form-check-input" type="radio" name="pauta" value="false" id="no-p"/>
+                                    <label className="social-label" for="no-p">No</label>
+                            </div>
+                    </div>
+                    <small id="emailHelp" className="form-text text-muted">Nombre de marca</small>
+                </div>
+
+                <div className="form-group">
+                <label className="form-title">Seleccionar la red social:</label>
+                            <div className="radio-flex">
+                                <div class="form-check">
+                                    <input className="form-check-input" type="radio" name="social" value="facebook" id="facebook-s"/>
+                                    <label className="social-label" for="facebook-s">Facebook</label>
+                                </div>
+                                <div class="form-check">
+                                    <input className="form-check-input" type="radio" name="social" value="instagram" id="instagram-s"/>
+                                    <label className="social-label" for="instagram-s">Instagram</label>
+                                </div>
+                                <div class="form-check">
+                                    <input className="form-check-input" type="radio" name="social" value="tiktok" id="tiktok-s"/>
+                                    <label className="social-label" for="tiktok-s">TikTok</label>
+                                </div>
+                            </div>
+                    <small id="emailHelp" className="form-text text-muted">Nombre de marca</small>
+                </div>
+
+                <div className="form-group">
                     <label>Fotos a subir: </label>
                     <DropFileInput 
                         onFileChange={(files) => onFileChange(files)}
                     />
-                    <small id="emailHelp" className="form-text text-muted">Información adicional</small>
+                    <small id="emailHelp" className="form-text text-muted">Fotos para el post</small>
                 </div>
 
                 <button
