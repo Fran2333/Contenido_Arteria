@@ -13,6 +13,7 @@ import { startChecking } from '../actions/auth';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { CalendarScreen } from '../components/calendar/CalendarScreen';
+import { Publicacion } from '../pages/publicacion';
 
 
 export const AppRouter = () => {
@@ -38,16 +39,18 @@ export const AppRouter = () => {
                     <PublicRoute 
                         exact 
                         path="/login" 
-                        component={ LoginScreen }
+                        component={ Publicacion }
                         isAuthenticated={ !!uid }
                     />
 
                     <PrivateRoute 
                         exact 
                         path="/" 
-                        component={ Calendario} 
+                        component={ Calendario } 
                         isAuthenticated={ !!uid }
                     />
+
+
 
                     <Redirect to="/" />   
                 </Switch>

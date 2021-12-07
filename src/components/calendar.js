@@ -5,6 +5,8 @@ import { CalendarScreen } from "../components/calendar/CalendarScreen";
 import { useDispatch } from "react-redux";
 import { uiOpenModal } from "../actions/ui";
 
+import  { Link } from 'react-router-dom'
+
 import "./calendar.css";
 
 export const Calendar = () => {
@@ -13,7 +15,7 @@ export const Calendar = () => {
   const dispatch = useDispatch();
 
   const handleClickNew = () => {
-      dispatch( uiOpenModal() );
+   
   }
 
   return (
@@ -34,13 +36,14 @@ export const Calendar = () => {
                 </li>
                 <li className="breadcrumb-item active">Calendario</li>
                 </ul>
-
+                <Link to ="/post">
                 <a
                 className="btn btn-sm btn-create btn-create2 btn-new"
-                onClick={handleClickNew}
                 >
+                  
                 Crear publicación
                 </a>
+                </Link>
             </div>
             </div>
         </div>

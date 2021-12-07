@@ -1,0 +1,42 @@
+.background-fb{
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.info-brand{
+    display: flex;
+    align-items: center;
+}
+
+.logo-brand{
+    width: 50px;
+    height: 50px;
+    border: 0.1px #666666 solid;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.user-brand{
+    margin: 0%;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.date-brand-post{
+    font-size: 13px;
+    font-weight: 400;
+    color: #5c5c5c !important;
+}
+
+.description-content{
+    margin-top: 25px;
+    font-size: 14px;
+    color: #5c5c5c;
+    font-weight: 400;
+}
+
+.img-brand{
+    width: 100%;
+    height: 300px;
+    border: 0.5px #5c5c5c solid;
+}

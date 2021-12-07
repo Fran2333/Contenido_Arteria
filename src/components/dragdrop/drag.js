@@ -11,6 +11,7 @@ export const DropFileInput = props => {
     const wrapperRef = useRef(null);
 
     const [fileList, setFileList] = useState([]);
+    const [urlList, setUrlList] = useState([]);
 
     const onDragEnter = () => wrapperRef.current.classList.add('dragover');
 
@@ -20,18 +21,36 @@ export const DropFileInput = props => {
 
     const onFileDrop = (e) => {
         const newFile = e.target.files[0];
+
         if (newFile) {
+            
             const updatedList = [...fileList, newFile];
+            
             setFileList(updatedList);
-            props.onFileChange(updatedList);
+
+            let reader = new FileReader();
+
+            reader.onload = e =>{
+                const url = e.target.result;
+
+                const updateURList = [...urlList, url];
+                setUrlList(updateURList);
+                props.onFileChange(updatedList, updateURList);
+            }
+
+            reader.readAsDataURL(newFile);
+
         }
     }
 
     const fileRemove = (file) => {
         const updatedList = [...fileList];
+        const updatedURList = [...urlList];
         updatedList.splice(fileList.indexOf(file), 1);
+        updatedURList.splice(urlList.indexOf(file), 1);
         setFileList(updatedList);
-        props.onFileChange(updatedList);
+        setUrlList(updatedURList);
+        props.onFileChange(updatedList, updatedURList);
     }
 
     return (

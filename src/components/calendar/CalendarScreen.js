@@ -81,8 +81,6 @@ export const CalendarScreen = () => {
                 }}
             />
 
-            <CalendarModal />
-
 
 
         </div>
