@@ -125,6 +125,8 @@ export const CalendarModal = () => {
         console.log(files);
     }
 
+    console.log(formValues);
+
     return (
         <>
             <div className="modal-grid">
