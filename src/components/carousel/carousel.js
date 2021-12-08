@@ -1,24 +1,44 @@
-
-import React from 'react'; 
-import OwlCarousel from 'react-owl-carousel';  
-import 'owl.carousel/dist/assets/owl.carousel.css';  
-import 'owl.carousel/dist/assets/owl.theme.default.css';  
+import React from 'react';
+import Carousel from 'nuka-carousel';
 import './carousel.css';
 
-import imagen1 from './images/blog-page-1.jpg';
+import imgDefault from './images/blog-page-1.jpg';
 
-export function Carousel ({urls}) {
-    return (  
-        <div>
-            <div class='container-fluid' id="carouselO" >            
-                <OwlCarousel items={1}  className="owl-carousel owl-theme" loop nav>  
+export const NukaCarousel = ({urls}) =>{
+    return (
+        <Carousel>
+          {
+              urls.length >= 1 ? (
+                urls.map(url =>{
+
+                    const divStyle = {
+                        margin: 'auto',
+                        width: '500px',
+                        height: '300px',
+                        backgroundImage: 'url(' + url + ')',
+                        backgroundSize: 'contain',
+                        backgroundPosition: 'center',
+                        backgroundRepeat:'no-repeat'
+                      };
+    
+                      return(
+                          <div style={divStyle}></div>
+                      )
+                  })
+              ): (
+                <div style={
                     {
-
+                        margin: 'auto',
+                        width: '500px',
+                        height: '300px',
+                        backgroundImage: 'url('+imgDefault+')',
+                        backgroundSize: 'contain',
+                        backgroundPosition: 'center',
+                        backgroundRepeat:'no-repeat'
                     }
-                </OwlCarousel>  
-            </div>  
-        </div>  
-      )  
-}  
-        
-          
+                }></div>
+              )
+          }
+        </Carousel>
+    );
+}

@@ -4,9 +4,10 @@
     margin-top: 10px;
 }
 
-.info-brand{
+.info-brand-i{
     display: flex;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .logo-brand{
@@ -33,9 +34,9 @@
     color: #5c5c5c !important;
 }
 
-.description-content{
+.description-content-i{
     margin-top: 25px;
-    margin-left: 15px;
+    margin-left: 25px;
     font-size: 14px;
     color: #5c5c5c;
     font-weight: 400;

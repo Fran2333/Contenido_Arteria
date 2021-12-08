@@ -1,5 +1,5 @@
 import {React} from "react";
-import {Carousel} from '../carousel/carousel';
+import {NukaCarousel} from "../carousel/carousel.js";
 
 import './facebook.css';
 
@@ -21,7 +21,7 @@ export const Facebook = ({formInfo}) => {
           {formInfo.notes}
         </p>
         <div>
-          <Carousel urls={formInfo.urls}/>
+          <NukaCarousel urls={formInfo.urls}/>
         </div>
       </div>
     </>

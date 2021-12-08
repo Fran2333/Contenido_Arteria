@@ -1,6 +1,21 @@
-.modal-grid{
+.modal-p{
     display: grid;
     grid-template-columns: repeat(2, 50%);
+    background-color: #f0f0f0;
+}
+
+.header-modal{
+    height: 30px;
+}
+
+.close-btn{
+    border: none;
+    width: 25px;
+    height: 25px;
+    margin-left: 95%;
+    background-image: url('../../assets/images/boton-de-cierre.png');
+    background-position: center;
+    background-size: cover;
 }
 
 .modal-title{
@@ -19,4 +34,11 @@
 .radio-flex{
     display: flex;
     justify-content: space-evenly;
+}
+
+.social-media{
+    padding: 20px;
+    position: fixed;
+    width: 45%;
+    right: 5%;
 }

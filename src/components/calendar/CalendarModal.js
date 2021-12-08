@@ -11,23 +11,36 @@ import {  eventClearActiveEvent, eventUpdated } from '../../actions/events';
 
 import {DropFileInput} from '../dragdrop/drag';
 import {Facebook} from '../posts/facebook';
+import {Instagram} from '../posts/instragram';
 
 import '../dragdrop/drag.css';
 
 import './CalendarModal.css';
 
 const customStyles = {
-    content : {
-      top                   : '50%',
-      left                  : '50%',
-      right                 : 'auto',
-      bottom                : 'auto',
-      marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)',
-      overflowY             : 'scroll'
-    }
-
+    overlay: {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(5, 5, 5, 0.529)'
+      },
+      content: {
+        width: '95%',
+        height: "610px",
+        position: 'absolute',
+        top: '10px',
+        left: '30px',
+        border: '1px solid #ccc',
+        overflow: 'auto',
+        WebkitOverflowScrolling: 'touch',
+        borderRadius: '4px',
+        outline: 'none',
+        padding: '20px',
+      }
 };
+
 Modal.setAppElement('#root');
 
 const now = moment().minutes(0).seconds(0).add(1,'hours'); // 3:00:00
@@ -37,7 +50,12 @@ const initEvent = {
     title: '',
     notes: '',
     start: now.toDate(),
-    end: nowPlus1.toDate()
+    end: nowPlus1.toDate(),
+    brand: '',
+    pauta: false,
+    social: '',
+    files: [],
+    urls: []
 }
 
 
@@ -53,7 +71,7 @@ export const CalendarModal = () => {
     
     const [formValues, setFormValues] = useState( initEvent );
 
-    const { notes, title, start, end } = formValues;
+    const { notes, title, start, end, brand, social } = formValues;
 
     useEffect(() => {
         if ( activeEvent ) {
@@ -122,23 +140,27 @@ export const CalendarModal = () => {
         
     }
 
-    const onFileChange = (files) => {
-        console.log(files);
+    const onFileChange = (files, urls) => {
+        setFormValues({
+            ...formValues,
+            files: files,
+            urls: urls
+        })
     }
 
     console.log(formValues);
 
     return (
         <>
-            <div className="modal-grid">
             <Modal
                 isOpen={ modalOpen }
                 onRequestClose={ closeModal }
                 style={ customStyles }
                 closeTimeoutMS={ 200 }
-                className="modal"
+                className="modal-p"
                 overlayClassName="modal-fondo"
-                >
+                >   
+                    <div>
                     <h1 className="modal-title"> { (activeEvent)? 'Editar evento': 'Nuevo evento' } </h1>
                     <hr />
                     <form 
@@ -220,15 +242,15 @@ export const CalendarModal = () => {
                         <label className="form-title">Seleccionar la red social:</label>
                                     <div className="radio-flex">
                                         <div class="form-check">
-                                            <input className="form-check-input" type="radio" name="social" value="facebook" id="facebook-s"/>
+                                            <input onChange={handleInputChange} className="form-check-input" type="radio" name="social" value="facebook" id="facebook-s"/>
                                             <label className="social-label" for="facebook-s">Facebook</label>
                                         </div>
                                         <div class="form-check">
-                                            <input className="form-check-input" type="radio" name="social" value="instagram" id="instagram-s"/>
+                                            <input onChange={handleInputChange} className="form-check-input" type="radio" name="social" value="instagram" id="instagram-s"/>
                                             <label className="social-label" for="instagram-s">Instagram</label>
                                         </div>
                                         <div class="form-check">
-                                            <input className="form-check-input" type="radio" name="social" value="tiktok" id="tiktok-s"/>
+                                            <input onChange={handleInputChange} className="form-check-input" type="radio" name="social" value="tiktok" id="tiktok-s"/>
                                             <label className="social-label" for="tiktok-s">TikTok</label>
                                         </div>
                                     </div>
@@ -238,7 +260,7 @@ export const CalendarModal = () => {
                         <div className="form-group">
                             <label>Fotos a subir: </label>
                             <DropFileInput 
-                                onFileChange={(files) => onFileChange(files)}
+                                onFileChange={(files, urls) => onFileChange(files, urls)}
                             />
                             <small id="emailHelp" className="form-text text-muted">Fotos para el post</small>
                         </div>
@@ -251,13 +273,16 @@ export const CalendarModal = () => {
                             <span> Guardar</span>
                         </button>
 
-                    </form>
-
+                        </form>
+                    </div>
+                    <div className="social-media">
+                        <div className="header-modal">
+                            <button className="close-btn" onClick={closeModal}></button>
+                        </div>
+                        {social == "facebook" ? <Facebook formInfo={formValues}/> : ''}
+                        {social == "instagram" ? <Instagram formInfo={formValues}/> : ''}
+                    </div>
                 </Modal>
-                <div className="social-media">
-                    <Facebook formInfo={formValues}/>
-                </div>
-            </div>
         </>
     )
 }
