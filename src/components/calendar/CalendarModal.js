@@ -10,6 +10,7 @@ import { uiCloseModal } from '../../actions/ui';
 import {  eventClearActiveEvent, eventUpdated } from '../../actions/events';
 
 import {DropFileInput} from '../dragdrop/drag';
+import {Facebook} from '../posts/facebook';
 
 import '../dragdrop/drag.css';
 
@@ -253,7 +254,9 @@ export const CalendarModal = () => {
                     </form>
 
                 </Modal>
-                
+                <div className="social-media">
+                    <Facebook formInfo={formValues}/>
+                </div>
             </div>
         </>
     )
