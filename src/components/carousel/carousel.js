@@ -5,26 +5,22 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';  
 import './carousel.css';
 
-export function Carousel ({urls}) {
+export const Carousel = ({urls}) =>{
 
     console.log(urls);
 
-    return (  
-        <div>
-            <div class='container-fluid-c' id="carouselO" >            
-                <OwlCarousel items={1}  className="owl-carousel owl-theme" loop nav>
+    return (            
+        <OwlCarousel items={1}  className="owl-carousel owl-theme" loop nav>
                     {
                         urls.map(url =>{
                             return(
-                                <div className="item">
-                                    <img  className="img" src={url}/>
+                                <div>
+                                    <img className="img" src={url}/>
                                 </div>
                             )
                         })
                     }
-                </OwlCarousel>  
-            </div>  
-        </div>  
+        </OwlCarousel> 
       )  
 }  
         

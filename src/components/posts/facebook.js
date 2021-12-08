@@ -21,7 +21,7 @@ export const Facebook = ({formInfo}) => {
           {formInfo.notes}
         </p>
         <div>
-         <Carousel urls={formInfo.urls}/>
+          <Carousel urls={formInfo.urls}/>
         </div>
       </div>
     </>

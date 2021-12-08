@@ -40,3 +40,9 @@
     height: 300px;
     border: 0.5px #5c5c5c solid;
 }
+
+.sliderimg{
+    width: 100%;
+    height: 500px;
+    object-fit: cover
+}

@@ -19,14 +19,14 @@ export const DropFileInput = props => {
 
     const onDrop = () => wrapperRef.current.classList.remove('dragover');
 
-    const onFileDrop = (e) => {
+    const onFileDrop = async (e) => {
         const newFile = e.target.files[0];
 
         if (newFile) {
             
             const updatedList = [...fileList, newFile];
             
-            setFileList(updatedList);
+            await setFileList(updatedList);
 
             let reader = new FileReader();
 
