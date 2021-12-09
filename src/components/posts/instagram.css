@@ -28,16 +28,23 @@
     font-weight: 600;
 }
 
-.date-brand-post{
-    font-size: 13px;
+.des-p-i{
+    margin: 0%;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-left: 25px;
+}
+
+.date-brand-post-i{
+    font-size: 12px;
     font-weight: 400;
     color: #5c5c5c !important;
+    margin-left: 25px;
 }
 
 .description-content-i{
     margin-top: 25px;
-    margin-left: 25px;
-    font-size: 14px;
+    font-size: 14px !important;
     color: #5c5c5c;
     font-weight: 400;
 }
@@ -53,3 +60,4 @@
     height: 500px;
     object-fit: cover
 }
+

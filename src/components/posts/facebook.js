@@ -1,9 +1,13 @@
 import {React} from "react";
 import {NukaCarousel} from "../carousel/carousel.js";
+import moment from 'moment';
 
 import './facebook.css';
 
 export const Facebook = ({formInfo}) => {
+
+  const date = formInfo.start;
+  const now = (moment().minutes(0).seconds(0).add(1,'hours')).toDate(); // 3:00:00
 
   return (
     <>
@@ -13,7 +17,15 @@ export const Facebook = ({formInfo}) => {
             <div className="text-brand">
             <h4 className="user-brand">Anónimo</h4>
             <span className="date-brand-post" id="date-post">
-
+              {
+                date ? (
+                  date.getDate() + " / " + (date.getMonth()+1) + " / " + date.getFullYear() + "  -  " + date.getHours()+":"+
+                  date.getMinutes()
+                ):(
+                  now.getDate() + " / " + (now.getMonth()+1) + " / " + now.getFullYear() + "  -  " + now.getHours()+":"+
+                  now.getMinutes()
+                )
+              }
             </span>
             </div>
         </div>

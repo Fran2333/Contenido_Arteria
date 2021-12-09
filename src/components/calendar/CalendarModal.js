@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import moment from 'moment';
 import Modal from 'react-modal';
-import DateTimePicker from 'react-datetime-picker';
+import { DateTimePickerComponent } from '@syncfusion/ej2-react-calendars';
 import Swal from 'sweetalert2';
 
 import { uiCloseModal } from '../../actions/ui';
@@ -12,6 +12,7 @@ import {  eventClearActiveEvent, eventUpdated } from '../../actions/events';
 import {DropFileInput} from '../dragdrop/drag';
 import {Facebook} from '../posts/facebook';
 import {Instagram} from '../posts/instragram';
+import { TextAreaEmoji } from '../texarea/textarea';
 
 import '../dragdrop/drag.css';
 
@@ -41,7 +42,7 @@ const customStyles = {
       }
 };
 
-Modal.setAppElement('#root');
+//Modal.setAppElement('#root');
 
 const now = moment().minutes(0).seconds(0).add(1,'hours'); // 3:00:00
 const nowPlus1 = now.clone().add(1, 'hours');
@@ -73,6 +74,8 @@ export const CalendarModal = () => {
 
     const { notes, title, start, end, brand, social } = formValues;
 
+    const [showPicker, setShowPicker] = useState(false);
+
     useEffect(() => {
         if ( activeEvent ) {
             setFormValues( activeEvent );
@@ -99,18 +102,18 @@ export const CalendarModal = () => {
     }
 
     const handleStartDateChange = ( e ) => {
-        setDateStart( e );
+        setDateStart( e.value );
         setFormValues({
             ...formValues,
-            start: e
+            start: e.value
         })
     }
     
     const handleEndDateChange = ( e ) => {
-        setDateEnd( e );
+        setDateEnd( e.value );
         setFormValues({
             ...formValues,
-            end: e
+            end: e.value
         })
     }
 
@@ -148,6 +151,7 @@ export const CalendarModal = () => {
         })
     }
 
+
     console.log(formValues);
 
     return (
@@ -170,16 +174,17 @@ export const CalendarModal = () => {
 
                         <div className="form-group">
                             <label>Fecha y hora inicio</label>
-                            <DateTimePicker
+                            <DateTimePickerComponent 
                                 onChange={ handleStartDateChange }
                                 value={ dateStart }
+                                minDate={ dateStart }
                                 className="form-control"
                             />
                         </div>
 
                         <div className="form-group">
                             <label>Fecha y hora fin</label>
-                            <DateTimePicker
+                            <DateTimePickerComponent 
                                 onChange={ handleEndDateChange }
                                 value={ dateEnd }
                                 minDate={ dateStart }
@@ -203,15 +208,12 @@ export const CalendarModal = () => {
                         </div>
 
                         <div className="form-group">
-                            <textarea 
-                                type="text" 
-                                className="form-control"
-                                placeholder="Descripcion"
-                                rows="5"
-                                name="notes"
-                                value={ notes }
-                                onChange={ handleInputChange }
-                            ></textarea>
+                            <TextAreaEmoji
+                                showPicker={showPicker} 
+                                setShowPicker={setShowPicker}
+                                formValues={formValues} 
+                                setFormValues={setFormValues}
+                            />
                             <small id="emailHelp" className="form-text text-muted">Información adicional</small>
                         </div>
 
