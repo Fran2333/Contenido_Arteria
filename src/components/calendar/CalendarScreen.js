@@ -6,8 +6,9 @@ import moment from 'moment';
 import { messages } from '../../helpers/calendar-messages-es';
 import { CalendarEvent } from './CalendarEvent';
 import { CalendarModal } from './CalendarModal';
+import { ModalPost } from '../modal/modal-post';
 
-import { uiOpenModalPost } from '../../actions/ui';
+import { uiOpenModal } from '../../actions/ui';
 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'moment/locale/es';
@@ -19,15 +20,34 @@ const localizer = momentLocalizer(moment);
 
 export const CalendarScreen = () => {
 
+    const now = moment().minutes(0).seconds(0).add(1,'hours'); // 3:00:00
+    const nowPlus1 = now.clone().add(1, 'hours');
+
+    const initEvent = {
+        title: '',
+        notes: '',
+        start: now.toDate(),
+        end: nowPlus1.toDate(),
+        brand: '',
+        pauta: false,
+        social: '',
+        files: [],
+        urls: []
+    }
+
     const dispatch = useDispatch();
     const { events, activeEvent } = useSelector( state => state.calendar );
 
     const [lastView, setLastView] = useState( localStorage.getItem('lastView') || 'month' );
 
+    const [modalIsOpen, setIsOpen] = useState(false);
+    
+    const [evento, setEvento] = useState(initEvent);
+
 
     const onDoubleClick = (e) => {
-        // console.log(e);
-        dispatch( uiOpenModalPost() );
+        setEvento(e);
+        setIsOpen(prevent => !prevent)
     }
 
     const onSelectEvent = (e) => {
@@ -42,6 +62,11 @@ export const CalendarScreen = () => {
     const onSelectSlot = (e) => {
         // console.log(e)
         dispatch( eventClearActiveEvent() );
+    }
+
+    const onDispatchModal = () =>{
+        dispatch(uiOpenModal());
+        setIsOpen(prevent => !prevent);
     }
 
 
@@ -82,9 +107,12 @@ export const CalendarScreen = () => {
             />
 
             <CalendarModal />
-
-
-
+            <ModalPost 
+                modalIsOpen={modalIsOpen} 
+                setIsOpen={setIsOpen}
+                formInfo={evento}
+                editInfo={onDispatchModal}
+            />
         </div>
     )
 }

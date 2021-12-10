@@ -151,9 +151,6 @@ export const CalendarModal = () => {
         })
     }
 
-
-    console.log(formValues);
-
     return (
         <>
             <Modal

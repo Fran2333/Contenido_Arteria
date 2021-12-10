@@ -26,21 +26,21 @@
     border: none !important;
 }
 
-.modal-header{
-    padding: 10px 0px;
-    border: none;
-}
-
 .modal-body{
     background-color: #ffffff;
     border-radius: 15px;
     padding: 30px 45px;
 }
 
+.btn-c{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .btnCancel{
     width: 22px;
     height: 22px;
-    margin-left: 95%;
     border: none;
     border-radius: 50%;
     background-image: url("../../assets/images/close-gray.png");
@@ -52,6 +52,15 @@
 
 .btnCancel:hover{
     background-image: url("../../assets/images/boton-de-cierre.png");
+}
+
+.editBtn{
+    padding: 5px 15px;
+    border: none;
+    background-color: #141414;
+    border-radius: 5px;
+    color: #ffff00;
+    font-weight: 500;
 }
 
 /*****************************************/
@@ -79,69 +88,42 @@
     background-color: #999999;
 }
 
-.info-brand{
-    display: flex;
-    align-items: center;
-}
-
-.logo-brand{
-    width: 50px;
-    height: 50px;
-    border: 0.1px #666666 solid;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-
-.user-brand{
-    margin: 0%;
-    font-size: 17px;
-    font-weight: 600;
-}
-
-.date-brand-post{
-    font-size: 13px;
-    font-weight: 400;
-    color: #5c5c5c !important;
-}
-
-.description-content{
-    margin-top: 25px;
-    font-size: 14px;
-    color: #5c5c5c;
-    font-weight: 400;
-}
-
-.img-brand{
-    width: 100%;
-    height: 300px;
-    border: 0.5px #5c5c5c solid;
-}
 
 .formulario-verificacion{
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .area-content{
-    width: 100%;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
 }
 
 .area-description{
     padding: 20px;
+    width: 100%;
+}
+
+.btn-content{
+    width: 60%;
+    margin: auto !important;
 }
 
 .btn-content button{
     font-size: 14px;
     padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
 }
 
 .btnCorr{
     background-color: #ffff00;
     color: #141414;
-    margin-left: 15px;
-    font-weight: 600;
 }
 
 .btnAccept{
     background-color: #1d2eb1;
+    margin-left: 15px;
     color: #ffffff;
 }

@@ -1,8 +1,11 @@
 import React from 'react';
 import Modal from 'react-modal';
+import moment from 'moment';
+import { Facebook } from '../posts/facebook.js';
+import { Instagram } from '../posts/instragram.js';
+import { uiOpenModal } from '../../actions/ui';
 
 import "./modal-post.css"
-import {Owldemo1} from '../carousel/carousel'
 
 
  const style = {
@@ -15,7 +18,7 @@ import {Owldemo1} from '../carousel/carousel'
       backgroundColor: 'rgba(5, 5, 5, 0.529)'
     },
     content: {
-      width: '600px',
+      width: '640px',
       height: "610px",
       position: 'absolute',
       top: '10px',
@@ -29,64 +32,49 @@ import {Owldemo1} from '../carousel/carousel'
  }
 
 
-export const ModalPost = () => {
+export const ModalPost = ({modalIsOpen, setIsOpen, formInfo, editInfo}) => {
 
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-
-    function openModal (){
-        setIsOpen(true);
-    }
-
-    function afterOpenModal(){
-        
-    }
-
+    
     function closeModal() {
-        setIsOpen(false);
+        setIsOpen(prevent => !prevent)
     }
 
     return (
-        <div>
-            <input type="button" onClick={openModal} value="Mostrar"/>
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                onAfterOpen={afterOpenModal}
-                closeTimeoutMS={500}
-                style={style}
-                contentLabel="Modal-Publicacion"
-                className="Modal-P visible"
-            >
-            <div className="modal-content">
-                <div className="modal-header">
+        <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        closeTimeoutMS={500}
+        style={style}
+        contentLabel="Modal-Publicacion"
+        className="Modal-P visible"
+    >
+        <div className="modal-content">
+            <div className="modal-body">
+
+                <div className='btn-c'>
+                    <button className="editBtn" onClick={editInfo}>Editar</button>
                     <button className="btnCancel" onClick={closeModal}></button>
                 </div>
-                <div className="modal-body">
-                    <div className="info-brand">
-                        <div className="logo-brand"></div>
-                        <div className="text-brand">
-                            <h4 className="user-brand">User Brand</h4>
-                            <span className="date-brand-post" id="date-post">09 de noviembre a las 12:15</span>
-                        </div>
-                    </div>
-                    <p className="description-content">
-                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    </p>
-                    <Owldemo1 />
-                    <form className="formulario-verificacion">
-                        <div className="area-content">
-                            <textarea className="area-description" name="textarea" rows="4" placeholder="Agrega comentario del post"></textarea>
-                        </div>
-                        <div className="btn-content">
-                            <button className="btnCan" onClick={closeModal}>Cancelar</button>
-                            <button className="btnCorr" name="corregir" value="true">Enviar correciones</button>
-                            <button type="submit" className="btnAccept" name="enviar" value="true">Aceptar</button>
-                        </div>
-                    </form>
+
+                <div className='social-content'>
+                    {formInfo.social == "facebook" ? <Facebook formInfo={formInfo}/> : <Facebook formInfo={formInfo}/>}
+                    {formInfo.social == "instagram" ? <Instagram formInfo={formInfo}/> : ""}
                 </div>
+                
+
+                <form className="formulario-verificacion">
+                    <hr/>
+                    <div className="area-content">
+                        <textarea className="area-description" name="textarea" rows="4" placeholder="Agrega comentario del post"></textarea>
+                    </div>
+                    <div className="btn-content">
+                        <button className="btnCorr" name="corregir" value="true">Enviar correciones</button>
+                        <button type="submit" className="btnAccept" name="enviar" value="true">Aprobar</button>
+                    </div>
+                </form>
             </div>
-            </Modal>
         </div>
+    </Modal>
         
     );
 }
